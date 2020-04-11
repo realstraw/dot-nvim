@@ -11,5 +11,5 @@ mkdir -p ~/.config/nvim/
 
 echo "Linking init.vim file..."
 init_vim_path="nvim/init.vim"
-rm ~/.config/$init_vim_path
+rm -rf ~/.config/$init_vim_path
 ln $project_root/dot-config/$init_vim_path ~/.config/$init_vim_path
