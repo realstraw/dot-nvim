@@ -23,6 +23,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'hashivim/vim-terraform'
 
+Plug 'mileszs/ack.vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -55,7 +57,17 @@ set foldlevel=3
 " Shortcut for no highlight
 nnoremap <C-h> :nohls<cr>
 
+" Remap buffer next and previous
+nnoremap <Leader>jj :bn<cr>
+nnoremap <Leader>kk :bp<cr>
+
 set wildignore+=*.o,*.obj,.git,target,build,*.class,*.cache,*.pyc,_build,node_modules
+
+"*****************************************************************************
+" Settings for grep or Ack
+"*****************************************************************************
+nnoremap <silent> <C-n> :cn<CR>zv
+nnoremap <silent> <C-p> :cp<CR>zv
 
 " comment highlighting for jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+

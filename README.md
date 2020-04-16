@@ -10,3 +10,8 @@ Run `./bootstrap.sh`, which will perform the following steps:
 
 Next launch `nvim` and type `:PlugInstall` to install all the configured
 plugins
+
+## Dependencies
+
+    1. fzf (for fuzzy file lookup)
+    1. nodejs, yarn, npm (for coc and vim-metals)
