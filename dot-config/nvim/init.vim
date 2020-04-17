@@ -48,6 +48,10 @@ set expandtab
 " show line numbers
 set number
 
+" The 'scrolloff' sets there are always at least 10 lines visible above and
+" below the cursor
+set so=10
+
 " Set the folding option to indent
 " nnoremap <space> za
 " nnoremap <S-space> zA
