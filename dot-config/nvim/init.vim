@@ -25,6 +25,10 @@ Plug 'hashivim/vim-terraform'
 
 Plug 'mileszs/ack.vim'
 
+Plug 'jeetsukumaran/vim-buffergator'
+
+Plug 'pangloss/vim-javascript'
+
 " Initialize plugin system
 call plug#end()
 
@@ -51,6 +55,11 @@ set number
 " The 'scrolloff' sets there are always at least 10 lines visible above and
 " below the cursor
 set so=10
+
+"*****************************************************************************
+" Settings for ctags
+"*****************************************************************************
+set tags=.tags
 
 " Set the folding option to indent
 " nnoremap <space> za
@@ -247,3 +256,8 @@ nnoremap <silent> <space>tb :<C-u>CocCommand metals.tvp metalsBuild<CR>
 nnoremap <silent> <space>tc :<C-u>CocCommand metals.tvp metalsCompile<CR>
 " Reveal current current class (trait or object) in Tree View 'metalsBuild'
 nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsBuild<CR>
+
+""""" above is the standard/default Coc setup for metals
+
+" add shortcut for  CocAction
+nnoremap <leader>ca :CocAction<CR>
