@@ -56,6 +56,9 @@ set number
 " below the cursor
 set so=10
 
+" Shortcut for removing trailing white spaces
+nnoremap <Leader>clr :%s/\s\+$//e<cr>
+
 "*****************************************************************************
 " Settings for ctags
 "*****************************************************************************
