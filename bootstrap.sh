@@ -6,10 +6,9 @@ echo "Installing vim-plug..."
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo "Creating nvim config directory..."
-mkdir -p ~/.config/nvim/
+echo "Creating .config directory..."
+mkdir -p ~/.config/
 
-echo "Linking init.vim file..."
-init_vim_path="nvim/init.vim"
-rm -rf ~/.config/$init_vim_path
-ln $project_root/dot-config/$init_vim_path ~/.config/$init_vim_path
+echo "Linking nvim directory..."
+rm -rf ~/.config/nvim
+ln -s $project_root/dot-config/nvim ~/.config/nvim
