@@ -29,6 +29,10 @@ Plug 'jeetsukumaran/vim-buffergator'
 
 Plug 'pangloss/vim-javascript'
 
+" For Markdown editing
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 " Initialize plugin system
 call plug#end()
 
