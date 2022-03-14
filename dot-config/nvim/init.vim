@@ -29,6 +29,8 @@ Plug 'jeetsukumaran/vim-buffergator'
 
 Plug 'pangloss/vim-javascript'
 
+Plug 'lervag/vimtex'
+
 " For Markdown editing
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
