@@ -31,6 +31,8 @@ Plug 'pangloss/vim-javascript'
 
 Plug 'lervag/vimtex'
 
+Plug 'altercation/vim-colors-solarized'
+
 " For Markdown editing
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
