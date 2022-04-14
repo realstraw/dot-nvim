@@ -3,7 +3,9 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
+" Color schemes
 Plug 'arcticicestudio/nord-vim'
+Plug 'altercation/vim-colors-solarized'
 
 Plug 'sonph/onehalf', {'rtp': 'vim'}
 
@@ -31,8 +33,6 @@ Plug 'pangloss/vim-javascript'
 
 Plug 'lervag/vimtex'
 
-Plug 'altercation/vim-colors-solarized'
-
 " For Markdown editing
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -41,6 +41,8 @@ Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 color nord
+" set background=light
+" color solarized
 
 " remap leader key
 let mapleader = ","

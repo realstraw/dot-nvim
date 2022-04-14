@@ -1,6 +1,12 @@
 call plug#begin('~/.vim/plugged')
 
+" Color schemes
 Plug 'arcticicestudio/nord-vim'
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+Plug 'junegunn/fzf'
 
 " For Markdown editing
 Plug 'godlygeek/tabular'
@@ -8,7 +14,22 @@ Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
-color nord
+""""" GUI Specific settings """"""
+
+set guifont=Monaco:h12
+
+" remove scroll bars
+set guioptions=
+
+""""""""""""""""""""""""""""""""""
+
+if has("gui_running")
+    set background=light
+    color solarized
+else
+    color nord
+endif
+
 " remap leader key
 let mapleader = ","
 nnoremap <Leader>, ,
@@ -33,6 +54,29 @@ set so=10
 
 " Shortcut for removing trailing white spaces
 nnoremap <Leader>clr :%s/\s\+$//e<cr>
+
+"*****************************************************************************
+" NERDTree Plugin Settings
+"*****************************************************************************
+
+" Toggle the NERD Tree on and off with ctr-l
+nnoremap <C-l> :NERDTreeToggle<CR>
+nnoremap <Leader>ll :NERDTreeToggle<CR>
+nnoremap <Leader>lh :NERDTreeFind<Cr>
+
+" Show the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+
+" Make changing the current root node also modifies pwd as well
+let g:NERDTreeChDirMode=2
+
+" Ignore .pyc files
+let NERDTreeIgnore = ['\.pyc$']
+
+"*****************************************************************************
+" Settings for FZF
+"*****************************************************************************
+nnoremap <Leader>oo :FZF<CR>
 
 "*****************************************************************************
 " Settings for ctags
