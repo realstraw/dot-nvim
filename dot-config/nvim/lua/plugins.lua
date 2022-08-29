@@ -12,20 +12,20 @@ return require('packer').startup(function(use)
   use 'altercation/vim-colors-solarized'
 
   -- scala-metals
-  use({
+  use {
     'hrsh7th/nvim-cmp',
     requires = {
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-vsnip" },
       { "hrsh7th/vim-vsnip" },
-    },
-  })
-  use({
+    }
+  }
+  use {
     "scalameta/nvim-metals",
     requires = {
       { "nvim-lua/plenary.nvim" }
-    },
-  })
+    }
+  }
 
   -- nerdtree
   use 'preservim/nerdtree'
@@ -38,4 +38,12 @@ return require('packer').startup(function(use)
       { 'BurntSushi/ripgrep' }
     }
   }
+
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+  }
+
 end)

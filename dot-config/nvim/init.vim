@@ -7,7 +7,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'junegunn/fzf'
 
-Plug 'derekwyatt/vim-scala'
+" Plug 'derekwyatt/vim-scala'
 
 Plug 'itchyny/lightline.vim'
 
@@ -120,23 +120,30 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+lua require('nvim_tree_settings')
+" "*****************************************************************************
+" " NERDTree Plugin Settings
+" "*****************************************************************************
+" 
+" " Toggle the NERD Tree on and off with ctr-l
+" nnoremap <C-l> :NERDTreeToggle<CR>
+" nnoremap <Leader>ll :NERDTreeToggle<CR>
+" nnoremap <Leader>lh :NERDTreeFind<Cr>
+" 
+" " Show the bookmarks table on startup
+" let NERDTreeShowBookmarks=1
+" 
+" " Make changing the current root node also modifies pwd as well
+" let g:NERDTreeChDirMode=2
+" 
+" " Ignore .pyc files
+" let NERDTreeIgnore = ['\.pyc$']
+" 
+
 "*****************************************************************************
-" NERDTree Plugin Settings
+" NvimTree Plugin Settings
 "*****************************************************************************
 
-" Toggle the NERD Tree on and off with ctr-l
-nnoremap <C-l> :NERDTreeToggle<CR>
-nnoremap <Leader>ll :NERDTreeToggle<CR>
-nnoremap <Leader>lh :NERDTreeFind<Cr>
-
-" Show the bookmarks table on startup
-let NERDTreeShowBookmarks=1
-
-" Make changing the current root node also modifies pwd as well
-let g:NERDTreeChDirMode=2
-
-" Ignore .pyc files
-let NERDTreeIgnore = ['\.pyc$']
 
 "*****************************************************************************
 " lightline Plugin Settings
