@@ -120,6 +120,10 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" "*****************************************************************************
+" " nvim-tree Plugin Settings
+" "*****************************************************************************
+
 lua require('nvim_tree_settings')
 nnoremap <C-l> :NvimTreeToggle<CR>
 
@@ -258,6 +262,7 @@ nnoremap <silent> <leader>aa  <cmd>lua vim.diagnostic.setqflist()<CR>
 nnoremap <silent> <space>d    <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
 nnoremap <silent> [c          <cmd>lua vim.diagnostic.goto_prev { wrap = false }<CR>
 nnoremap <silent> ]c          <cmd>lua vim.diagnostic.goto_next { wrap = false }<CR>
+nnoremap <silent> <leader>:   <cmd>lua require("telescope").extensions.metals.commands()<CR>
 
 "-----------------------------------------------------------------------------
 " nvim-lsp Settings
