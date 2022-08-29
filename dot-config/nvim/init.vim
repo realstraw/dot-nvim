@@ -9,13 +9,9 @@ Plug 'sonph/onehalf', {'rtp': 'vim'}
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'junegunn/fzf'
 
 Plug 'derekwyatt/vim-scala'
-
-" Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'itchyny/lightline.vim'
 
@@ -37,13 +33,13 @@ Plug 'plasticboy/vim-markdown'
 
 " nvim-cmp
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
 
-Plug 'nvim-lua/plenary.nvim'
-Plug 'scalameta/nvim-metals'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'scalameta/nvim-metals'
 
 " Initialize plugin system
 call plug#end()
