@@ -6,4 +6,9 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
+  -- Color schemes
+  use 'arcticicestudio/nord-vim'
+  use 'altercation/vim-colors-solarized'
+
 end)
