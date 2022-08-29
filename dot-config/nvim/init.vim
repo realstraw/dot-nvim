@@ -113,6 +113,14 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 nnoremap <Leader>oo :FZF<CR>
 
 "*****************************************************************************
+" Settings for Telescope
+"*****************************************************************************
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+"*****************************************************************************
 " NERDTree Plugin Settings
 "*****************************************************************************
 

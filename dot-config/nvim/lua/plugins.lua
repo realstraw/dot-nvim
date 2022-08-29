@@ -23,11 +23,19 @@ return require('packer').startup(function(use)
   use({
     "scalameta/nvim-metals",
     requires = {
-      "nvim-lua/plenary.nvim"
+      { "nvim-lua/plenary.nvim" }
     },
   })
 
   -- nerdtree
   use 'preservim/nerdtree'
 
+  use {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'BurntSushi/ripgrep' }
+    }
+  }
 end)
