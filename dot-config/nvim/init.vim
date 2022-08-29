@@ -121,6 +121,9 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 lua require('nvim_tree_settings')
+nnoremap <C-l> :NvimTreeToggle<CR>
+
+
 " "*****************************************************************************
 " " NERDTree Plugin Settings
 " "*****************************************************************************
