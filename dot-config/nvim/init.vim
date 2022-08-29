@@ -5,10 +5,6 @@ lua require('plugins')
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
-Plug 'sonph/onehalf', {'rtp': 'vim'}
-
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
 Plug 'junegunn/fzf'
 
 Plug 'derekwyatt/vim-scala'

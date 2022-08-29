@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
   use 'arcticicestudio/nord-vim'
   use 'altercation/vim-colors-solarized'
 
+  -- scala-metals
   use({
     'hrsh7th/nvim-cmp',
     requires = {
@@ -25,5 +26,8 @@ return require('packer').startup(function(use)
       "nvim-lua/plenary.nvim"
     },
   })
+
+  -- nerdtree
+  use 'preservim/nerdtree'
 
 end)
