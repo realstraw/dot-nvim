@@ -1,1 +1,4 @@
 .netrwhist
+
+# Do not need to checkin automatically installed plugins
+dot-config/nvim/plugin
