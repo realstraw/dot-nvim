@@ -116,10 +116,10 @@ nnoremap <Leader>oo :FZF<CR>
 " Settings for Telescope
 "*****************************************************************************
 lua require('telescope_settings')
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <Leader>ff <cmd>Telescope find_files<cr>
+nnoremap <Leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <Leader>fb <cmd>Telescope buffers<cr>
+nnoremap <Leader>fh <cmd>Telescope help_tags<cr>
 
 " "*****************************************************************************
 " " nvim-tree Plugin Settings
@@ -127,7 +127,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 lua require('nvim_tree_settings')
 nnoremap <C-l> :NvimTreeToggle<CR>
-
 
 " "*****************************************************************************
 " " NERDTree Plugin Settings
