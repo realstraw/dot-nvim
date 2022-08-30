@@ -21,11 +21,14 @@ return require('packer').startup(function(use)
     }
   }
   use {
-    "scalameta/nvim-metals",
+    'scalameta/nvim-metals',
     requires = {
-      { "nvim-lua/plenary.nvim" }
+      { 'nvim-lua/plenary.nvim' }
     }
   }
+
+  -- lspconfigs
+  use 'neovim/nvim-lspconfig'
 
   -- nerdtree
   use 'preservim/nerdtree'
