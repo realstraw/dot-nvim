@@ -4,7 +4,7 @@ require("nvim-tree").setup({
     mappings = {
       list = {
         { key = { "<CR>", "o" }, action = "edit_no_picker" },
-        { key = "i", action = "vsplit" },
+        { key = "i", action = "split" },
       },
     }
   },
