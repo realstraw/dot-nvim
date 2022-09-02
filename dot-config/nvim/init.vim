@@ -5,7 +5,7 @@ lua require('plugins')
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin(stdpath('data') . '/plugged')
 
-Plug 'junegunn/fzf'
+" Plug 'junegunn/fzf'
 
 " Plug 'derekwyatt/vim-scala'
 
@@ -17,15 +17,15 @@ Plug 'junegunn/fzf'
 
 " Plug 'mileszs/ack.vim'
 
-Plug 'jeetsukumaran/vim-buffergator'
+" Plug 'jeetsukumaran/vim-buffergator'
 
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
 
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 
-" For Markdown editing
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+" " For Markdown editing
+" Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
 
 " nvim-cmp
 " Plug 'neovim/nvim-lspconfig'

@@ -57,4 +57,19 @@ return require('packer').startup(function(use)
 
   use 'mileszs/ack.vim'
 
+  use 'junegunn/fzf'
+
+  use 'jeetsukumaran/vim-buffergator'
+
+  use 'pangloss/vim-javascript'
+
+  use 'lervag/vimtex'
+
+  use {
+    'plasticboy/vim-markdown',
+    requires = {
+      { 'godlygeek/tabular' },
+    },
+  }
+
 end)
