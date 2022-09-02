@@ -9,13 +9,13 @@ Plug 'junegunn/fzf'
 
 " Plug 'derekwyatt/vim-scala'
 
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
-Plug 'hashivim/vim-terraform'
+" Plug 'hashivim/vim-terraform'
 
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 
 Plug 'jeetsukumaran/vim-buffergator'
 

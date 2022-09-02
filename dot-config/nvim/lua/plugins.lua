@@ -49,4 +49,12 @@ return require('packer').startup(function(use)
     },
   }
 
+  use 'itchyny/lightline.vim'
+
+  use 'tpope/vim-fugitive'
+
+  use 'hashivim/vim-terraform'
+
+  use 'mileszs/ack.vim'
+
 end)
