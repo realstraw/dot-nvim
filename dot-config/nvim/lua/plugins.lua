@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
 
   use 'mileszs/ack.vim'
 
-  use 'junegunn/fzf'
+  -- use 'junegunn/fzf'
 
   use 'jeetsukumaran/vim-buffergator'
 
