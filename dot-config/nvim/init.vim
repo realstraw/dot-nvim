@@ -1,45 +1,5 @@
 lua require('plugins')
 
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin(stdpath('data') . '/plugged')
-
-" Plug 'junegunn/fzf'
-
-" Plug 'derekwyatt/vim-scala'
-
-" Plug 'itchyny/lightline.vim'
-
-" Plug 'tpope/vim-fugitive'
-
-" Plug 'hashivim/vim-terraform'
-
-" Plug 'mileszs/ack.vim'
-
-" Plug 'jeetsukumaran/vim-buffergator'
-
-" Plug 'pangloss/vim-javascript'
-
-" Plug 'lervag/vimtex'
-
-" " For Markdown editing
-" Plug 'godlygeek/tabular'
-" Plug 'plasticboy/vim-markdown'
-
-" nvim-cmp
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'hrsh7th/nvim-cmp'
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
-
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'scalameta/nvim-metals'
-
-" Initialize plugin system
-call plug#end()
-
 color nord
 " set background=light
 " color solarized

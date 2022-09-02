@@ -2,10 +2,6 @@
 
 project_root="$(cd "`dirname "$0"`"; pwd)"
 
-echo "Installing vim-plug for neovim..."
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 echo "Creating .config directory..."
 mkdir -p ~/.config/
 
