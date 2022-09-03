@@ -3,7 +3,7 @@ require("nvim-tree").setup({
     adaptive_size = true,
     mappings = {
       list = {
-        { key = { "<CR>", "o" }, action = "edit_no_picker" },
+        -- { key = { "<CR>", "o" }, action = "edit_no_picker" },
         { key = "i", action = "split" },
       },
     }
