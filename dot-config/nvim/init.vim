@@ -215,7 +215,7 @@ nnoremap <silent> gr          <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gds         <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gws         <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> <leader>rn  <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <leader>f   <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent> <leader>fm  <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> <leader>ca  <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <leader>ws  <cmd>lua require'metals'.worksheet_hover()<CR>
 nnoremap <silent> <leader>aa  <cmd>lua vim.diagnostic.setqflist()<CR>
