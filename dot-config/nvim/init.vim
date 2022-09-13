@@ -55,6 +55,7 @@ nnoremap <C-h> :nohls<cr>
 nnoremap <Leader>jj :bn<cr>
 nnoremap <Leader>kk :bp<cr>
 
+set wildmode=longest:full,full
 set wildignore+=*.o,*.obj,.git,target,build,*.class,*.cache,*.pyc,_build,node_modules
 
 "*****************************************************************************
