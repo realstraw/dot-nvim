@@ -9,7 +9,7 @@ metals_config.settings = {
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-metals_config.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local api = vim.api
 local nvim_metals_group = api.nvim_create_augroup("nvim-metals", { clear = true })
