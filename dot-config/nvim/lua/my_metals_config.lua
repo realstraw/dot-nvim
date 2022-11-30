@@ -8,10 +8,13 @@ metals_config.settings = {
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
 }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+-- Consider turning this one after mvoing to lualine, more detail see https://github.com/scalameta/nvim-metals/discussions/39
+-- metals_config.init_options.statusBarProvider = "on"
 
-local api = vim.api
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 local nvim_metals_group = api.nvim_create_augroup("nvim-metals", { clear = true })
 api.nvim_create_autocmd("FileType", {
   pattern = { "scala", "sbt", "java" },

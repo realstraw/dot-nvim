@@ -49,7 +49,15 @@ return require('packer').startup(function(use)
     },
   }
 
-  use 'itchyny/lightline.vim'
+  -- for status bar configurations
+  -- use 'itchyny/lightline.vim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true
+    },
+  }
 
   use 'tpope/vim-fugitive'
 
