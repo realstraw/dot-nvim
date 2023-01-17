@@ -30,9 +30,6 @@ return require('packer').startup(function(use)
   -- lspconfigs
   use 'neovim/nvim-lspconfig'
 
-  -- nerdtree
-  use 'preservim/nerdtree'
-
   use {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
