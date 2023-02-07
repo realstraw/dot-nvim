@@ -78,9 +78,13 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 "*****************************************************************************
 lua require('telescope_settings')
 nnoremap <Leader>ff <cmd>Telescope find_files<cr>
+nnoremap <Leader>,f <cmd>Telescope find_files<cr>
 nnoremap <Leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <Leader>,g <cmd>Telescope live_grep<cr>
 nnoremap <Leader>fb <cmd>Telescope buffers<cr>
+nnoremap <Leader>,b <cmd>Telescope buffers<cr>
 nnoremap <Leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <Leader>,h <cmd>Telescope help_tags<cr>
 
 " "*****************************************************************************
 " " nvim-tree Plugin Settings
