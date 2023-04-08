@@ -61,6 +61,16 @@ cmp.setup.cmdline({ '/', '?' }, {
 --     { name = 'cmdline' }
 --   })
 -- })
+cmp.setup.cmdline(':', {
+  sources = {
+    {
+      name = 'cmdline',
+      option = {
+        ignore_cmds = {}
+      }
+    }
+  }
+})
 
 --- NOTE: Commen out the following for metals
 -- -- Set up lspconfig.
