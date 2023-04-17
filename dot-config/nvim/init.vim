@@ -2,10 +2,16 @@ lua require('plugins')
 
 set termguicolors
 color nord
-" make use of the terminal background
-" (https://www.reddit.com/r/neovim/comments/3v06lo/making_the_background_transparent/)
-highlight Normal guibg=none
-highlight NonText guibg=none
+
+
+if !has("gui_running")
+    " make use of the terminal background
+    " (https://www.reddit.com/r/neovim/comments/3v06lo/making_the_background_transparent/)
+    highlight Normal guibg=none
+    highlight NonText guibg=none
+endif
+
+
 " set background=light
 " color solarized
 
