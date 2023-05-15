@@ -168,3 +168,8 @@ set shortmess+=c
 
 " Ensure autocmd works for Filetype
 set shortmess-=F
+
+"-----------------------------------------------------------------------------
+" vim-go Mappings
+"-----------------------------------------------------------------------------
+nnoremap <silent> gr :GoReferrers<CR>
