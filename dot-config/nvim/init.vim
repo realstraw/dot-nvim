@@ -49,9 +49,9 @@ nnoremap <Leader>clr :%s/\s\+$//e<cr>
 inoremap <Tab> <C-x><C-o>
 
 "*****************************************************************************
-" Shortcut for fake-zoom
+" Shortcut for fake-zoom (maximize the window by creating a new tab)
 "*****************************************************************************
-nnoremap <Leader>oo :tab split<CR>
+nnoremap <Leader>wo :tab split<CR>
 
 "*****************************************************************************
 " Settings for ctags
