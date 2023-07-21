@@ -7,6 +7,7 @@ require('telescope').setup({
         ["!"] = action_layout.toggle_preview,
       },
     },
+    file_ignore_patterns = { "^%.git" }
   },
   pickers = {
     find_files = {
