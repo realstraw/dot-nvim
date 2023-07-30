@@ -6,6 +6,9 @@ metals_config = require'metals'.bare_config()
 metals_config.settings = {
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
+  ---- Note need to run :MetalsUpdate to update to the latest server setting
+  ---- to set explicit server version, set the following
+  -- serverVersion = "1.0.0",
 }
 
 -- Consider turning this one after mvoing to lualine, more detail see https://github.com/scalameta/nvim-metals/discussions/39
