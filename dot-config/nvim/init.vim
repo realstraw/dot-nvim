@@ -132,30 +132,36 @@ set completeopt=menu,menuone,noselect
 
 lua require('nvim_cmp_settings')
 
+"*****************************************************************************
+" nvim-lspconfig Plugin Settings
+"*****************************************************************************
+
+lua require('nvim_lspconfig_settings')
+
 """"""""""""""""""""""""
 " METALS!!!!!!
 """"""""""""""""""""""""
 
 lua require('my_metals_config')
 
-"-----------------------------------------------------------------------------
-" nvim-lsp Mappings
-"-----------------------------------------------------------------------------
-nnoremap <silent> gd          <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K           <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gi          <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> gr          <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gds         <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gws         <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> <leader>rn  <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <leader>fm  <cmd>lua vim.lsp.buf.format { async = true }<CR>
-nnoremap <silent> <leader>ca  <cmd>lua vim.lsp.buf.code_action()<CR>
-nnoremap <silent> <leader>ws  <cmd>lua require'metals'.worksheet_hover()<CR>
-nnoremap <silent> <leader>aa  <cmd>lua vim.diagnostic.setqflist()<CR>
-nnoremap <silent> <space>d    <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
-nnoremap <silent> [c          <cmd>lua vim.diagnostic.goto_prev { wrap = false }<CR>
-nnoremap <silent> ]c          <cmd>lua vim.diagnostic.goto_next { wrap = false }<CR>
-nnoremap <silent> <leader>mm  <cmd>lua require("telescope").extensions.metals.commands()<CR>
+"" "-----------------------------------------------------------------------------
+"" " nvim-lsp Mappings
+"" "-----------------------------------------------------------------------------
+"" nnoremap <silent> gd          <cmd>lua vim.lsp.buf.definition()<CR>
+"" nnoremap <silent> K           <cmd>lua vim.lsp.buf.hover()<CR>
+"" nnoremap <silent> gi          <cmd>lua vim.lsp.buf.implementation()<CR>
+"" nnoremap <silent> gr          <cmd>lua vim.lsp.buf.references()<CR>
+"" nnoremap <silent> gds         <cmd>lua vim.lsp.buf.document_symbol()<CR>
+"" nnoremap <silent> gws         <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+"" nnoremap <silent> <leader>rn  <cmd>lua vim.lsp.buf.rename()<CR>
+"" nnoremap <silent> <leader>fm  <cmd>lua vim.lsp.buf.format { async = true }<CR>
+"" nnoremap <silent> <leader>ca  <cmd>lua vim.lsp.buf.code_action()<CR>
+"" nnoremap <silent> <leader>ws  <cmd>lua require'metals'.worksheet_hover()<CR>
+"" nnoremap <silent> <leader>aa  <cmd>lua vim.diagnostic.setqflist()<CR>
+"" nnoremap <silent> <space>d    <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
+"" nnoremap <silent> [c          <cmd>lua vim.diagnostic.goto_prev { wrap = false }<CR>
+"" nnoremap <silent> ]c          <cmd>lua vim.diagnostic.goto_next { wrap = false }<CR>
+"" nnoremap <silent> <leader>mm  <cmd>lua require("telescope").extensions.metals.commands()<CR>
 
 "-----------------------------------------------------------------------------
 " nvim-lsp Settings
