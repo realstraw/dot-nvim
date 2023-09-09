@@ -157,11 +157,11 @@ lua require('my_metals_config')
 "" nnoremap <silent> <leader>fm  <cmd>lua vim.lsp.buf.format { async = true }<CR>
 "" nnoremap <silent> <leader>ca  <cmd>lua vim.lsp.buf.code_action()<CR>
 "" nnoremap <silent> <leader>ws  <cmd>lua require'metals'.worksheet_hover()<CR>
-nnoremap <silent> <leader>aa  <cmd>lua vim.diagnostic.setqflist()<CR>
+nnoremap <leader>aa  <cmd>lua vim.diagnostic.setqflist()<CR>
 "" nnoremap <silent> <space>d    <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
 "" nnoremap <silent> [c          <cmd>lua vim.diagnostic.goto_prev { wrap = false }<CR>
 "" nnoremap <silent> ]c          <cmd>lua vim.diagnostic.goto_next { wrap = false }<CR>
-nnoremap <silent> <leader>mm  <cmd>lua require("telescope").extensions.metals.commands()<CR>
+nnoremap <leader>mm  <cmd>lua require("telescope").extensions.metals.commands()<CR>
 
 "-----------------------------------------------------------------------------
 " nvim-lsp Settings
