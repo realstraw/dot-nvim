@@ -79,4 +79,6 @@ return require('packer').startup(function(use)
 
   use 'fatih/vim-go'
 
+  use 'lukas-reineke/indent-blankline.nvim'
+
 end)
