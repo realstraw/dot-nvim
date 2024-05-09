@@ -5,7 +5,12 @@ metals_config = require'metals'.bare_config()
 
 metals_config.settings = {
   showImplicitArguments = true,
-  excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
+  excludedPackages = {
+    "akka.actor.typed.javadsl",
+    "pekko.actor.typed.javadsl",
+    "com.github.swagger.akka.javadsl" ,
+    "com.github.swagger.pekko.javadsl" 
+  },
   ---- Note need to run :MetalsUpdate to update to the latest server setting
   ---- to set explicit server version, set the following
   -- serverVersion = "1.0.0",
