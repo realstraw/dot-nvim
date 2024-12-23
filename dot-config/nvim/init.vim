@@ -107,7 +107,7 @@ nnoremap <Leader>,h <cmd>Telescope help_tags<cr>
 " "*****************************************************************************
 
 lua require('nvim_tree_settings')
-nnoremap <C-l> :NvimTreeToggle<CR>
+nnoremap <C-l> :NvimTreeFindFileToggle<CR>
 
 "*****************************************************************************
 " lightline Plugin Settings
