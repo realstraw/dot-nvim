@@ -1,0 +1,46 @@
+lua require('packer_plugins')
+
+set termguicolors
+color nord
+
+if !has("gui_running")
+    " make use of the terminal background
+    " (https://www.reddit.com/r/neovim/comments/3v06lo/making_the_background_transparent/)
+    highlight Normal guibg=none
+    highlight NonText guibg=none
+endif
+
+" set background=light
+" color solarized
+
+"*****************************************************************************
+" Settings for grep or Ack
+"*****************************************************************************
+nnoremap <silent> <C-n> :cn<CR>zv
+nnoremap <silent> <C-p> :cp<CR>zv
+
+" comment highlighting for jsonc
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+"*****************************************************************************
+" Settings for vim-scala
+"*****************************************************************************
+" Configuration for vim-scala
+au BufRead,BufNewFile *.sbt set filetype=scala
+
+"*****************************************************************************
+" lightline Plugin Settings
+"*****************************************************************************
+" Show full path of file instead of just the file name
+let g:lightline = {
+    \    'active': {
+    \        'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ],
+    \    },
+    \    'colorscheme': 'nord'
+    \}
+
+""""""""""""""""""""""""
+" METALS!!!!!!
+""""""""""""""""""""""""
+
+lua require('my_metals_config')
