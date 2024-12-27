@@ -8,7 +8,8 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Color schemes
-  use 'nordtheme/vim'
+  -- use 'nordtheme/vim'
+  use "gbprod/nord.nvim"
   use 'altercation/vim-colors-solarized'
 
   -- scala-metals
