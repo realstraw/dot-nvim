@@ -13,6 +13,9 @@ require('telescope').setup({
     find_files = {
       follow = true,
       hidden = true,
+      layout_strategy = 'vertical',
+      layout_config = { width = 0.8 },
+      -- theme = "dropdown",
     }
   },
 })
