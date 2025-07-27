@@ -41,4 +41,9 @@ return {
       -- :set background=light
     end
   },
+
+  {
+    "cocopon/iceberg.vim",
+    priority = 1000,
+  },
 }
