@@ -1,14 +1,13 @@
 local function config()
   -- Setup language servers.
-  local lspconfig = require('lspconfig')
-  lspconfig.pyright.setup {}
-  lspconfig.ts_ls.setup {}
-  lspconfig.rust_analyzer.setup {
-    -- Server-specific settings. See `:help lspconfig-setup`
+  vim.lsp.enable('pyright')
+  vim.lsp.enable('ts_ls')
+  vim.lsp.config('rust_analyzer', {
+    -- Server-specific settings. See `:help lsp-quickstart`
     settings = {
       ['rust-analyzer'] = {},
     },
-  }
+  })
 
   -- Global mappings.
   -- See `:help vim.diagnostic.*` for documentation on any of the below functions
