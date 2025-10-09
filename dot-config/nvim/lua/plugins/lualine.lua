@@ -4,13 +4,9 @@ local function config()
       theme = 'nord'
     },
     sections = {
-      lualine_c = { 'buffers' },
-      lualine_x = {
-        {'filename', path = 1}, -- 0 = just name, 1 = relative path, 2 = absolute path
-        'encoding',
-        'fileformat',
-        'filetype'
-      },
+      lualine_c = {
+        {'filename', path = 1} -- 0 = just name, 1 = relative path, 2 = absolute path
+      }
     }
   }
 end
