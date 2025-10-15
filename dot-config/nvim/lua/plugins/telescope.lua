@@ -17,7 +17,13 @@ local function config()
         layout_strategy = 'vertical',
         layout_config = { width = 0.8 },
         -- theme = "dropdown",
-      }
+      },
+      buffers = {
+        layout_strategy = 'vertical',
+      },
+      live_grep = {
+        layout_strategy = 'vertical',
+      },
     },
   })
 end
