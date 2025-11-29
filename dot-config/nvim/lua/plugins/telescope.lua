@@ -1,13 +1,11 @@
-local action_layout = require("telescope.actions.layout")
-
 local function config()
   require('telescope').setup({
     defaults = {
-      mappings = {
-        n  = {
-          ["!"] = action_layout.toggle_preview,
-        },
-      },
+      -- mappings = {
+      --   n  = {
+      --     ["!"] = action_layout.toggle_preview,
+      --   },
+      -- },
       file_ignore_patterns = { "^%.git", "node_modules", ".next" }
     },
     pickers = {
