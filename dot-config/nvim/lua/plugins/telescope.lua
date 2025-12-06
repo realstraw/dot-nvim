@@ -6,7 +6,7 @@ local function config()
       --     ["!"] = action_layout.toggle_preview,
       --   },
       -- },
-      file_ignore_patterns = { "^%.git", "node_modules", ".next" }
+      file_ignore_patterns = { "^%.git", "node_modules", ".next", ".venv" }
     },
     pickers = {
       find_files = {
