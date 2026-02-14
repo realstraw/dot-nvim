@@ -52,4 +52,9 @@ return {
     "cocopon/iceberg.vim",
     priority = 1000,
   },
+
+  {
+    "sainnhe/everforest",
+    priority = 1000,
+  },
 }
