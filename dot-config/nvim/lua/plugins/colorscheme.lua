@@ -20,6 +20,12 @@ return {
         bright_border = true,
         telescope = {
           style = 'classic',
+        },
+        visual = {
+          theme = 'light',
+        },
+        cursorline = {
+          theme = 'light',
         }
       })
     end
