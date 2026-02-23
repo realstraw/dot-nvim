@@ -6,3 +6,5 @@ vim.cmd.colorscheme("nord")
 -- vim.cmd.colorscheme("everforest")
 -- vim.cmd.colorscheme("nordic")
 -- vim.cmd.colorscheme("e-ink")
+
+vim.filetype.add({ extension = { mdx = 'markdown' } })
