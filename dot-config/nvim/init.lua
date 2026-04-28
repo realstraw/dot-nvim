@@ -1,4 +1,5 @@
 require("config.lazy")
+require("commands.renumber_list")
 
 vim.cmd.colorscheme("nord")
 -- vim.cmd.colorscheme("iceberg")
