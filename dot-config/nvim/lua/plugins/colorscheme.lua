@@ -72,4 +72,10 @@ return {
     "sainnhe/everforest",
     priority = 1000,
   },
+
+  {
+    "webhooked/kanso.nvim",
+    lazy = true,
+    priority = 1000,
+  },
 }
