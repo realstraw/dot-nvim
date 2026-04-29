@@ -1,4 +1,5 @@
 {
+  "auto-dark-mode.nvim": { "branch": "main", "commit": "54058b4fe414bd64bd2904a6f8a63f1f14e3d8df" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "cbc7b02bb99fae35cb42f514762b89b5126651ef" },
   "cmp-vsnip": { "branch": "main", "commit": "989a8a73c44e926199bfd05fa7a516d51f2d2752" },
   "e-ink.nvim": { "branch": "main", "commit": "a0f003a0c6e2952abd9b73ef89d56c65e6c46f00" },
@@ -12,8 +13,8 @@
   "nordic.nvim": { "branch": "main", "commit": "c38a210bdaf79e74823d88c741029cac7f6b4481" },
   "nvim-cmp": { "branch": "main", "commit": "a1d504892f2bc56c2e79b65c6faded2fd21f3eca" },
   "nvim-dap": { "branch": "master", "commit": "45a69eba683a2c448dd9ecfc4de89511f0646b5f" },
-  "nvim-lspconfig": { "branch": "master", "commit": "bf5abe69c1874531f359a822d0cff4d73e26113f" },
-  "nvim-metals": { "branch": "main", "commit": "b914d3b963582109371d0949424c3cc6758d99b8" },
+  "nvim-lspconfig": { "branch": "master", "commit": "b66a8ce16b141cd26576267e2d1f371d658b7bb7" },
+  "nvim-metals": { "branch": "main", "commit": "4cc98f07ec96bb748a8796831767538e0e4f9be4" },
   "nvim-tree.lua": { "branch": "master", "commit": "85d1145ac71c1b8e1423862c78165a1f609faf60" },
   "nvim-treesitter": { "branch": "main", "commit": "4916d6592ede8c07973490d9322f187e07dfefac" },
   "nvim-web-devicons": { "branch": "master", "commit": "4fc505ac7bd7692824a142e96e5f529c133862f8" },

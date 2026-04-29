@@ -1,7 +1,7 @@
 require("config.lazy")
 require("commands.renumber_list")
 
-vim.cmd.colorscheme("nord")
+-- vim.cmd.colorscheme("nord")
 -- vim.cmd.colorscheme("iceberg")
 -- vim.g.everforest_background = 'hard'
 -- vim.cmd.colorscheme("everforest")
