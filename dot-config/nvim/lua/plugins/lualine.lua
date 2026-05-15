@@ -1,7 +1,7 @@
 local function config()
   require('lualine').setup {
     options = {
-      theme = 'nord'
+      theme = 'auto'
     },
     sections = {
       lualine_c = {
