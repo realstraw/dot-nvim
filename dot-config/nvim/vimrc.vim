@@ -45,10 +45,9 @@ nnoremap <Leader>wo :tab split<CR>
 set tags=.tags
 
 " Set the folding option to indent
-" nnoremap <space> za
-" nnoremap <S-space> zA
 set foldmethod=syntax
 set foldlevel=3
+nnoremap <Leader>z za
 
 " Shortcut for no highlight
 nnoremap <C-h> :nohls<cr>
