@@ -12,20 +12,28 @@ return {
         only_render_image_at_cursor = false,
         filetypes = { "markdown", "vimwiki" },
         resolve_image_path = function(document_path, image_path, fallback)
-          -- strip Jekyll Liquid prefixes
-          local stripped = image_path:gsub("^{{%s*site%.baseurl%s*}}", "")
-                                     :gsub("^{{%s*site%.url%s*}}", "")
-          if stripped ~= image_path then
-            -- find the Jekyll site root by walking up from the document
-            local dir = vim.fn.fnamemodify(document_path, ":h")
-            while dir ~= "/" do
-              if vim.fn.filereadable(dir .. "/_config.yml") == 1 then
-                return dir .. stripped
-              end
-              dir = vim.fn.fnamemodify(dir, ":h")
+          -- find the Jekyll site root by walking up from the document
+          local site_root = nil
+          local dir = vim.fn.fnamemodify(document_path, ":h")
+          for _ = 0, 3 do -- the document's own directory, plus 3 levels up
+            if vim.fn.filereadable(dir .. "/_config.yml") == 1 then
+              site_root = dir
+              break
             end
+            dir = vim.fn.fnamemodify(dir, ":h")
           end
-          return fallback(document_path, image_path)
+          if not site_root then return fallback(document_path, image_path) end
+
+          -- {{"/assets/x.png"|relative_url}} -> /assets/x.png
+          local stripped = image_path:match("^{{%s*['\"](.-)['\"]") or image_path
+          -- strip Jekyll Liquid prefixes
+          stripped = stripped:gsub("^{{%s*site%.baseurl%s*}}", "")
+                             :gsub("^{{%s*site%.url%s*}}", "")
+
+          -- /assets/... is relative to the site root, not to /
+          if stripped:sub(1, 1) == "/" then return site_root .. stripped end
+
+          return fallback(document_path, stripped)
         end,
       },
     },
