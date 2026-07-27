@@ -1,6 +1,9 @@
 return {
   "3rd/image.nvim",
   build = false,
+  -- Integration is markdown/vimwiki-only, so load on those filetypes rather
+  -- than pulling the kitty/magick backend in at startup everywhere.
+  ft = { "markdown", "vimwiki" },
   opts = {
     backend = "kitty",
     processor = "magick_cli",

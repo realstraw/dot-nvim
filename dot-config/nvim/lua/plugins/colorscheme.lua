@@ -60,6 +60,7 @@ return {
 
   {
     "alexxGmZ/e-ink.nvim",
+    lazy = true,
     priority = 1000,
     config = function ()
       require("e-ink").setup()
@@ -77,11 +78,13 @@ return {
 
   {
     "cocopon/iceberg.vim",
+    lazy = true,
     priority = 1000,
   },
 
   {
     "sainnhe/everforest",
+    lazy = true,
     priority = 1000,
   },
 

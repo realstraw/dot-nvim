@@ -1,5 +1,8 @@
 return {
     'MeanderingProgrammer/render-markdown.nvim',
+    -- Only renders markdown buffers; load on that filetype so its treesitter
+    -- and devicons deps don't load at startup in non-markdown sessions.
+    ft = { "markdown" },
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons

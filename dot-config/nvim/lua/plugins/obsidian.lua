@@ -1,6 +1,14 @@
 return {
   "obsidian-nvim/obsidian.nvim",
   version = "*", -- use latest release, remove to use latest commit
+  -- Lazy-load: the plugin spins up on first use rather than at startup, so
+  -- unrelated nvim sessions stay light. `cmd` covers any :Obsidian command;
+  -- `keys` adds the shortcut. Note: the lualine sync icon stays blank and
+  -- continuous sync won't auto-resume until the plugin is first triggered.
+  cmd = "Obsidian",
+  keys = {
+    { "<Leader>ot", "<cmd>Obsidian today<cr>", desc = "Obsidian: today's daily note" },
+  },
   ---@module 'obsidian'
   ---@type obsidian.config
   opts = {
