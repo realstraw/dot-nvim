@@ -1,6 +1,18 @@
 return {
   {
     "f-person/auto-dark-mode.nvim",
+    -- Register before any colorscheme is applied so the first nord load is
+    -- covered. A ColorScheme autocmd re-applies on every load, surviving the
+    -- dark/light toggle (config would only run once).
+    init = function()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "nord",
+        callback = function()
+          -- nord's default Special (#d8dee9) is near-white and hard to see.
+          vim.api.nvim_set_hl(0, "Special", { fg = "#a3be8c" }) -- nord14 green
+        end,
+      })
+    end,
     opts = {
       update_interval = 1000,
       set_dark_mode = function()
