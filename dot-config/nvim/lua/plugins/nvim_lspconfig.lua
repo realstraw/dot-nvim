@@ -1,13 +1,16 @@
 local function config()
   -- Setup language servers.
   vim.lsp.enable('pyright')
-  vim.lsp.enable('ts_ls')
-  vim.lsp.config('rust_analyzer', {
-    -- Server-specific settings. See `:help lsp-quickstart`
-    settings = {
-      ['rust-analyzer'] = {},
-    },
-  })
+
+  -- TypeScript 7 is the native (Go) port: it dropped the JS tsserver.js that
+  -- ts_ls wraps, so ts_ls can't start against it. The native compiler doubles
+  -- as the language server via an undocumented `--lsp` flag, which lspconfig's
+  -- tsgo config drives. Override cmd because that config expects a binary named
+  -- `tsgo` (from @typescript/native-preview), while the released `typescript`
+  -- package names it `tsc`. The `tsc` shim execve's the platform binary with
+  -- args forwarded, so the plain PATH name works and stays portable.
+  vim.lsp.config('tsgo', { cmd = { 'tsc', '--lsp', '--stdio' } })
+  vim.lsp.enable('tsgo')
 
   -- Global mappings.
   -- See `:help vim.diagnostic.*` for documentation on any of the below functions

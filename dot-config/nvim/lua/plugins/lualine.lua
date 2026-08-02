@@ -1,7 +1,13 @@
 -- obsidian.nvim exposes sync state via require("obsidian.sync.status") but
--- never renders it. Show its icon in the statusline. The module isn't loaded
--- until the plugin sets up, so require lazily inside the component.
+-- never renders it. Show its icon in the statusline.
+--
+-- Guard on the Obsidian global (created by obsidian.setup()) before requiring:
+-- lazy.nvim hooks require(), so requiring an obsidian module force-loads the
+-- plugin in every session, defeating its cmd/keys lazy-loading. pcall doesn't
+-- help — the load happens inside require, before it can fail. The icon stays
+-- blank until an :Obsidian command loads the plugin.
 local function obsidian_sync()
+  if not Obsidian then return '' end
   local ok, status = pcall(require, 'obsidian.sync.status')
   if not ok then return '' end
   return status.icon()
@@ -24,6 +30,7 @@ local function config()
           -- status.color() returns a highlight group (ObsidianSyncSynced etc.,
           -- linked to Diagnostic{Ok,Warn,Info,Error}); lualine accepts a group name.
           color = function()
+            if not Obsidian then return nil end
             local ok, status = pcall(require, 'obsidian.sync.status')
             return ok and status.color() or nil
           end,
