@@ -42,36 +42,12 @@ local function config()
     })
   })
 
-  -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline({ '/', '?' }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-      { name = 'buffer' }
-    }
-  })
-
-
-  --- NOTE: Comment out the following some how it doesn't work with commandline
-  --- autocomplete
-  -- -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  -- cmp.setup.cmdline(':', {
-  --   mapping = cmp.mapping.preset.cmdline(),
-  --   sources = cmp.config.sources({
-  --     { name = 'path' }
-  --   }, {
-  --     { name = 'cmdline' }
-  --   })
-  -- })
-  cmp.setup.cmdline(':', {
-    sources = {
-      {
-        name = 'cmdline',
-        option = {
-          ignore_cmds = {}
-        }
-      }
-    }
-  })
+  -- NOTE: No cmp cmdline completion here. The `cmp-cmdline`, `cmp-buffer`, and
+  -- `cmp-path` sources aren't installed, so `cmp.setup.cmdline` had nothing to
+  -- complete. Worse, `preset.cmdline()` installs a *global* command-mode <Tab>
+  -- map that persists after the first `/`/`?` search, then hijacks `:` <Tab> and
+  -- inserts a literal ^I instead of triggering the native wildmenu. We rely on
+  -- Vim's built-in wildmenu instead (see `wildmenu`/`wildmode` in vimrc.vim).
 
   --- NOTE: Commen out the following for metals
   -- -- Set up lspconfig.
