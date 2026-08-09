@@ -23,13 +23,21 @@ local function config()
         layout_strategy = 'vertical',
       },
     },
+    extensions = {
+      ['ui-select'] = {
+        require('telescope.themes').get_dropdown(),
+      },
+    },
   })
+  -- Route vim.ui.select (used by vim.lsp.buf.code_action) through Telescope.
+  require('telescope').load_extension('ui-select')
 end
 
 return {
   'nvim-telescope/telescope.nvim', version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope-ui-select.nvim',
     -- optional but recommended
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
