@@ -42,6 +42,16 @@ return {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
   config = config,
+  -- telescope is lazy-loaded via the keys below, so on a fresh start the
+  -- ui-select extension hasn't overridden vim.ui.select yet. Shim it to load
+  -- telescope on first use (e.g. the first LSP code action), then delegate to
+  -- the real (now-overridden) vim.ui.select.
+  init = function()
+    vim.ui.select = function(...)
+      require('lazy').load({ plugins = { 'telescope.nvim' } })
+      return vim.ui.select(...)
+    end
+  end,
 	keys = {
 		-- nnoremap <Leader>ff <cmd>Telescope find_files<cr>
 		{ "<Leader>ff", "<cmd>Telescope find_files<cr>" },
