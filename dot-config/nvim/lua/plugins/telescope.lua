@@ -18,6 +18,10 @@ local function config()
       },
       buffers = {
         layout_strategy = 'vertical',
+        mappings = {
+          n = { ["dd"] = require('telescope.actions').delete_buffer },
+          i = { ["<C-x>"] = require('telescope.actions').delete_buffer },
+        },
       },
       live_grep = {
         layout_strategy = 'vertical',
