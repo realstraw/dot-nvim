@@ -142,6 +142,69 @@ return {
   end,
 
   config = function(self, metals_config)
+    -- >>> BEGIN Metals semantic-tokens cascade fix (remove once fixed upstream:
+    --     https://github.com/scalameta/metals/issues/8887) >>>
+    -- Work around a Metals semantic-tokens bug. When a string interpolation
+    -- ($ident) sits at column 0 inside a multi-line interpolated string, Metals
+    -- emits that token with a deltaLine one short: the preceding blank line is
+    -- dropped. Because the LSP token stream is delta-encoded, that single missing
+    -- line shifts EVERY later token up one line for the rest of the file,
+    -- corrupting the highlighting of the string and of all real code after it.
+    -- Neovim decodes the stream faithfully; the bad deltas come from Metals.
+    --
+    -- We repair the flat token array before Neovim decodes it. Metals never
+    -- tokenizes a truly-empty line, so any token landing on one means the stream
+    -- under-counted earlier; we bump that token's deltaLine down to the next
+    -- non-empty line, which re-aligns the whole cascade in one idempotent pass
+    -- (only integer values change, never the array length, so it is self-healing
+    -- across edits). NOTE: this reaches into vim.lsp.semantic_tokens internals and
+    -- may need revisiting on a Neovim upgrade; drop it once Metals fixes the bug.
+    local STH = vim.lsp.semantic_tokens.__STHighlighter
+    if STH and not STH.__scala_interp_repair then
+      STH.__scala_interp_repair = true
+      local orig_process_response = STH.process_response
+
+      local function repair_metals_tokens(data, bufnr)
+        local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+        local nlines = #lines
+        local line ---@type integer?
+        for i = 1, #data, 5 do
+          local dl = data[i]
+          line = line and (line + dl) or dl
+          local len = data[i + 2]
+          -- A token can only start on an empty line if Metals dropped a line
+          -- earlier. Shift it (and, via the delta chain, every following token)
+          -- down to the next non-empty line.
+          if len > 0 and lines[line + 1] == "" then
+            local target = line
+            while target < nlines - 1 and lines[target + 1] == "" do
+              target = target + 1
+            end
+            if target ~= line then
+              data[i] = dl + (target - line)
+              line = target
+            end
+          end
+        end
+      end
+
+      STH.process_response = function(hl, response, client, request_id, version, is_range_request)
+        -- Only touch full (non-range) Metals responses. Range responses are
+        -- transient and superseded by the full result we repair here.
+        if client and client.name == "metals" and not is_range_request and response and response.data then
+          -- Force full (non-delta) responses so we always receive the complete
+          -- flat array here and never have to reconstruct server-side edits.
+          local state = hl.client_state and hl.client_state[client.id]
+          if state then
+            state.supports_delta = false
+          end
+          repair_metals_tokens(response.data, hl.bufnr)
+        end
+        return orig_process_response(hl, response, client, request_id, version, is_range_request)
+      end
+    end
+    -- <<< END Metals semantic-tokens cascade fix <<<
+
     local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
     vim.api.nvim_create_autocmd("FileType", {
       pattern = self.ft,
