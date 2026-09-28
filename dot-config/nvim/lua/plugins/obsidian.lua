@@ -9,6 +9,7 @@ return {
   keys = {
     { "<Leader>ob", "<cmd>Obsidian today<cr>", desc = "Obsidian: today's daily note" },
     { "<Leader>ot", "<cmd>Obsidian tomorrow<cr>", desc = "Obsidian: tomorrow's daily note" },
+    { "<Leader>of", "<cmd>Obsidian quick_switch<cr>", desc = "Obsidian: open quick switch" },
   },
   ---@module 'obsidian'
   ---@type obsidian.config
