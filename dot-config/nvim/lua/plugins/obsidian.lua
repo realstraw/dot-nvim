@@ -7,9 +7,9 @@ return {
   -- continuous sync won't auto-resume until the plugin is first triggered.
   cmd = "Obsidian",
   keys = {
-    { "<Leader>ob", "<cmd>Obsidian today<cr>", desc = "Obsidian: today's daily note" },
-    { "<Leader>ot", "<cmd>Obsidian tomorrow<cr>", desc = "Obsidian: tomorrow's daily note" },
-    { "<Leader>of", "<cmd>Obsidian quick_switch<cr>", desc = "Obsidian: open quick switch" },
+    { "<Leader>bb", "<cmd>Obsidian today<cr>", desc = "Obsidian: today's daily note" },
+    { "<Leader>bt", "<cmd>Obsidian tomorrow<cr>", desc = "Obsidian: tomorrow's daily note" },
+    { "<Leader>bf", "<cmd>Obsidian quick_switch<cr>", desc = "Obsidian: open quick switch" },
   },
   ---@module 'obsidian'
   ---@type obsidian.config
