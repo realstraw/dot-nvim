@@ -4,6 +4,24 @@ return {
   -- Integration is markdown/vimwiki-only, so load on those filetypes rather
   -- than pulling the kitty/magick backend in at startup everywhere.
   ft = { "markdown", "vimwiki" },
+  keys = {
+    {
+      "<Leader>ti",
+      function()
+        local image = require("image")
+        local enabled = not image.is_enabled()
+
+        if enabled then
+          image.enable()
+        else
+          image.disable()
+        end
+
+        vim.notify("Inline images " .. (enabled and "enabled" or "disabled"))
+      end,
+      desc = "Toggle inline images",
+    },
+  },
   opts = {
     backend = "kitty",
     processor = "magick_cli",
@@ -43,7 +61,9 @@ return {
     max_width = 80,
     max_height = 80,
     -- max_height_window_percentage = 50,
-    window_overlap_clear_enabled = true,
+    -- Overlap handling breaks Visual mode when images are rendered in splits.
+    -- Keep the upstream default disabled; normal split rendering still works.
+    window_overlap_clear_enabled = false,
     window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
     editor_only_render_when_focused = false,
     tmux_show_only_in_active_window = true,
