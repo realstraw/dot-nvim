@@ -78,6 +78,11 @@ return {
     frontmatter = {
       enabled = false,
     },
+    -- Stop <CR> (smart action) from toggling/creating checkboxes; <CR> still
+    -- follows links and opens tags.
+    checkbox = {
+      enabled = false,
+    },
     -- render-markdown.nvim handles markdown rendering; disable obsidian's own UI
     -- to avoid two renderers conflicting (and the conceallevel warning).
     ui = {
