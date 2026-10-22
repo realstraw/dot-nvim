@@ -3,7 +3,7 @@ return {
   cmd = { "AerialToggle", "AerialOpen", "AerialClose", "AerialNavToggle", "AerialInfo" },
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
-    { "<leader>o", "<cmd>AerialToggle<CR>", desc = "Toggle code outline" },
+    { "<C-S-l>", "<cmd>AerialToggle<CR>", desc = "Toggle code outline" },
   },
   opts = {
     attach_mode = "global",
